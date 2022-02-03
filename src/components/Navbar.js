@@ -1,4 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import CartWidget from "./CartWidget.js";
 
 const Navbar = () => {
   return (
@@ -76,6 +77,7 @@ const Navbar = () => {
             <button className="btn btn-outline-success" type="submit">
               Buscar
             </button>
+            <CartWidget />
           </form>
         </div>
       </div>

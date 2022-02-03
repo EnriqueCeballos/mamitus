@@ -1,0 +1,89 @@
+.galleryProduct {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+.galleryProduct .cardProduct {
+  height: 400px;
+  width: 100%;
+  background-color: black;
+  box-shadow: 0 3px 8px rgba(165, 163, 163, 0.755);
+  transition: all 0.2s;
+  justify-self: center;
+}
+.galleryProduct img {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center 90%;
+  border-radius: 8px;
+  opacity: 0.85;
+}
+.galleryProduct .cardProduct:hover {
+  transform: scale(1.05, 1.05);
+}
+.galleryProduct .cardProduct:hover img {
+  opacity: 1;
+}
+
+.card__image {
+  height: 70%;
+  width: 100%;
+  padding: 8px;
+  background-size: cover;
+  background-position: center 90%;
+  border-radius: 8px;
+}
+.card__image p {
+  color: white;
+  text-align: center;
+  margin: 0px;
+  font-size: 18px;
+}
+.card__image .price {
+  color: white;
+  text-align: center;
+  margin: 0px;
+  font-size: 20px;
+}
+.buyNow {
+  align-items: center;
+  justify-content: space-evenly;
+  height: 43%;
+  display: flex;
+  border-radius: 8px 8px 0 0;
+}
+.buyNow .textBuy a {
+  padding: 10px 13px;
+  box-shadow: 0px 1px 2px #3d3d3d;
+  background-color: #dc3545;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 5px solid black;
+}
+.buyNow .textBuy a:hover {
+  background-color: #f2e4d8;
+  color: black;
+  box-shadow: 0px 1px 2px #3d3d3d;
+  border-radius: 5px;
+}
+.buyNow img {
+  height: 30px;
+  width: 30px;
+}
+.buyNow .addBuy {
+  background-color: #ccc6c6;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.buyNow .addBuy :hover {
+  background-color: #f79ea6;
+  box-shadow: 0px 1px 2px #3d3d3d;
+  border-radius: 3px;
+  height: 40px;
+  width: 40px;
+}
