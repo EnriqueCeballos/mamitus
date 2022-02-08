@@ -1,16 +1,16 @@
-const ItemListContainer = () => {
+const ItemListContainer = (gretting) => {
   return (
     <>
       <h1>Contenedor de productos</h1>
       <div className="cardProduct">
         <div className="card__image">
-          <p>PRODUCTO NUMERO 1 </p>
+          <p>{gretting.tittle}</p>
           <img
-            src="images/lapiceras/penCircle.jpg"
+            src={gretting.img}
             alt="Circulo de Lapiceras artesanales"
             className="card__menu"
           />
-          <p className="price">Precio: $150</p>
+          <p className="price">Precio: {gretting.price}</p>
         </div>
         <div className="buyNow">
           <div className="textBuy">
