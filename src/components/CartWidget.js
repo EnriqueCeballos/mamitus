@@ -3,7 +3,7 @@ import Badge from "@material-ui/core/Badge";
 
 const CartWidget = () => {
   return (
-    <Badge badgeContent={1} color="secondary">
+    <Badge badgeContent={0} color="secondary">
       <img src={"../img/shopping-bag.png"} alt="Shopping Bag" />
     </Badge>
   );
