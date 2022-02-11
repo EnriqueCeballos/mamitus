@@ -1,27 +1,35 @@
-import ItemCount from "./ItemCount";
+import ItemList from "./ItemList";
+import { useEffect, useState } from "react";
+import productos from "./product.js";
 
-const ItemListContainer = (gretting) => {
+const ItemListContainer = () => {
+  const [datos, setDatos] = useState([]);
+
+  let opcionValida = true;
+
+  const customFetch = (timeout, data) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (opcionValida) {
+          resolve(data);
+        } else {
+          reject("Producto no encontrado");
+        }
+      }, timeout);
+    });
+  };
+
+  useEffect(() => {
+    customFetch(2000, productos)
+      .then((result) => setDatos(result))
+      .catch((err) => console.log(err));
+  }, []);
+  console.log(datos);
   return (
-    <>
-      <h1>Contenedor de productos</h1>
-      <div className="cardProduct">
-        <div className="card__image">
-          <p>{gretting.tittle}</p>
-          <img
-            src={gretting.img}
-            alt="Circulo de Lapiceras artesanales"
-            className="card__menu"
-          />
-          <p className="price">Precio: {gretting.price}</p>
-        </div>
-        <div className="buyNow">
-          <div className="textBuy">
-            <a href="lapiceras.html">COMPRAR AHORA</a>
-          </div>
-          <ItemCount stock="5" initial="1" />
-        </div>
-      </div>
-    </>
+    <div>
+      <h1>hola</h1>
+      <ItemList items={datos}></ItemList>
+    </div>
   );
 };
 

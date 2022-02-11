@@ -1,50 +1,275 @@
-.galleryProduct {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
-}
-.galleryProduct .cardProduct {
-  height: 400px;
-  width: 100%;
-  background-color: black;
-  box-shadow: 0 3px 8px rgba(165, 163, 163, 0.755);
-  transition: all 0.2s;
-  justify-self: center;
-}
-.galleryProduct img {
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  background-position: center 90%;
-  border-radius: 8px;
-  opacity: 0.85;
-}
-.galleryProduct .cardProduct:hover {
-  transform: scale(1.05, 1.05);
-}
-.galleryProduct .cardProduct:hover img {
-  opacity: 1;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
-.card__image {
-  height: 70%;
+/* GENERAL */
+nav {
+  background-color: #473633;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 2px solid white;
+}
+
+nav ul {
+  text-decoration: none;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+nav a {
+  text-decoration: none;
+  color: #956e69;
+  padding: 5px;
+}
+
+.navList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.textNav {
+  font-family: "Black Ops One", cursive;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.textNav p {
+  margin: 0px;
+  padding: 0px;
+  color: white;
+  opacity: 0.5;
+}
+body {
+  background-color: #a7dcf3;
+}
+/* #76A698 */
+
+.bodyGallery {
+  width: 95%;
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+#filterGallery {
+  background-color: #1a4731;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin: 30px;
+  border-radius: 8px;
+
+  color: #9fe3c2;
+}
+.filterGallery__text {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.filterGallery__text p {
+  margin-top: 10px;
+}
+
+.textInput {
+  margin-top: 10px;
+}
+.check {
+  margin: 10px;
+}
+
+#filterGallery img {
+  width: 40px;
+  height: 40px;
+}
+
+.fondoCarritoGeneral img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  margin: 5px;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+main {
+  display: flex;
+  height: 1000px;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+.footerText p {
+  margin: 10px;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+
+/* FOOTER */
+footer {
+  background-color: black;
   width: 100%;
-  padding: 8px;
-  background-size: cover;
-  background-position: center 90%;
+  height: 300px;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 20px;
+}
+.itemsCountButtoms {
+  display: flex;
+}
+.plusButton,
+.minusButton {
+  height: 30px;
+  font-size: 20px;
+  width: 30px;
+}
+
+.footerRedes {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  list-style: none;
+}
+
+.footerRedes a {
+  text-decoration: none;
+  list-style: none;
+}
+.footerRedes a img {
+  width: 30px;
+  height: 30px;
+}
+
+.footerContact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerContact p {
+  color: white;
+  margin: 0px;
+}
+
+/* PAGINA INDEX */
+
+.indexTittle {
+  margin: 10px;
+  margin-bottom: 30px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.indexText {
+  font-size: 20px;
+  margin: 30px 10px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.galleryIndex {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.galleryIndex img {
+  width: 100%;
+  height: 500px;
+}
+
+/* PAGINA PRODUCT */
+.applyFilter {
+  width: 20%;
+  height: 30px;
+  margin: 20px;
+  background-color: #9fe3c2;
   border-radius: 8px;
 }
-.card__image p {
-  color: white;
-  text-align: center;
-  margin: 0px;
-  font-size: 18px;
+.galleryProduct {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
 }
-.card__image .price {
+
+.cardProduct {
+  background-color: #478289;
+  height: 450px;
+  border-radius: 8px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -5px 5px 20px 0px black;
+  transition: 0.3s;
+}
+
+.btnDiv {
+  display: flex;
+}
+.priceStock {
+  display: flex;
+  flex-direction: row;
+}
+.buttonsDetails {
+  height: 30px;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 8px;
+}
+
+.textDescripcion,
+.textMedidas {
+  display: none;
   color: white;
-  text-align: center;
-  margin: 0px;
-  font-size: 20px;
+  margin: 1px;
+}
+
+.nombre-munheco,
+.contadorStock,
+.precioMunheco {
+  color: white;
+  padding: 5px;
+}
+.cardProduct:hover {
+  transform: scale(1.1, 1.1);
+}
+.imagen-producto img {
+  width: 100%;
+  height: 330px;
+}
+
+.buy {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.buy img {
+  width: 40px;
+  height: 40px;
 }
 .buyNow {
   align-items: center;
@@ -86,4 +311,34 @@
   border-radius: 3px;
   height: 40px;
   width: 40px;
+}
+.alertaProducto {
+  display: none;
+  position: fixed;
+  background-color: white;
+  color: black;
+  width: 200px;
+  height: 70px;
+  font-size: 18px;
+  bottom: 5%;
+  right: 2%;
+  border-radius: 8px;
+  margin: auto;
+}
+.compraProducto {
+  display: none;
+  position: fixed;
+  background-color: white;
+  color: black;
+  width: 200px;
+  height: 70px;
+  bottom: 5%;
+  right: 2%;
+  border-radius: 8px;
+  margin: auto;
+  font-size: 20px;
+}
+.iconoAprobar {
+  width: 25px;
+  height: 25px;
 }
