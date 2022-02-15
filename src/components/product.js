@@ -5,9 +5,9 @@ const productos = [
     nombre: "Iron Man",
     stock: 6,
     img: "./img/product/modelo1.jpg",
-    categoria: "superheroes",
+    categoria: "cuadrada",
     descripcion:
-      "Producto realizado con madera de pino cepillado, acompañados con acrilico y una capa de barniz para mantener el color.",
+      "Producto realizado con hilo o totora de manera artesanal, utilizando dos agujas para realizar un punto.",
     medidas: "Medidas: 9cm de alto x 5cm de ancho",
   },
   {
@@ -16,9 +16,9 @@ const productos = [
     nombre: "Flash",
     stock: 5,
     img: "./img/product/modelo2.jpg",
-    categoria: "superheroes",
+    categoria: "cuadrada",
     descripcion:
-      "Producto realizado con madera de pino cepillado, acompañados con acrilico y una capa de barniz para mantener el color.",
+      "Producto realizado con hilo o totora de manera artesanal, utilizando dos agujas para realizar un punto.",
     medidas: "Medidas: 9cm de alto x 5cm de ancho",
   },
   {
@@ -27,9 +27,9 @@ const productos = [
     nombre: "Capitan America",
     stock: 6,
     img: "./img/product/modelo3.jpg",
-    categoria: "superheroes",
+    categoria: "cuadrada",
     descripcion:
-      "Producto realizado con madera de pino cepillado, acompañados con acrilico y una capa de barniz para mantener el color.",
+      "Producto realizado con hilo o totora de manera artesanal, utilizando dos agujas para realizar un punto.",
     medidas: "Medidas: 9cm de alto x 5cm de ancho",
   },
   {
@@ -38,9 +38,9 @@ const productos = [
     nombre: "Buzzlightyear",
     stock: 3,
     img: "./img/product/modelo4.jpg",
-    categoria: "dibujosAnimados",
+    categoria: "redondas",
     descripcion:
-      "Producto realizado con madera de pino cepillado, acompañados con acrilico y una capa de barniz para mantener el color.",
+      "Producto realizado con hilo o totora de manera artesanal, utilizando dos agujas para realizar un punto.",
     medidas: "Medidas: 9cm de alto x 5cm de ancho",
   },
   {
@@ -49,20 +49,20 @@ const productos = [
     nombre: "Thor",
     stock: 3,
     img: "./img/product/modelo5.jpg",
-    categoria: "superheroes",
+    categoria: "cuadrada",
     descripcion:
-      "Producto realizado con madera de pino cepillado, acompañados con acrilico y una capa de barniz para mantener el color.",
+      "Producto realizado con hilo o totora de manera artesanal, utilizando dos agujas para realizar un punto.",
     medidas: "Medidas: 9cm de alto x 5cm de ancho",
   },
   {
     id: 6,
     precio: 500,
-    nombre: "Batman",
+    nombre: "Alfombra roja con azul",
     stock: 6,
     img: "./img/product/modelo6.jpg",
-    categoria: "superheroes",
+    categoria: "cuadrada",
     descripcion:
-      "Producto realizado con madera de pino cepillado, acompañados con acrilico y una capa de barniz para mantener el color.",
+      "Producto realizado con hilo o totora de manera artesanal, utilizando dos agujas para realizar un punto.",
     medidas: "Medidas: 9cm de alto x 5cm de ancho",
   },
 
@@ -72,9 +72,9 @@ const productos = [
     nombre: "Harry Potter",
     stock: 3,
     img: "./img/product/modelo7.jpg",
-    categoria: "clasicos",
+    categoria: "basicas",
     descripcion:
-      "Producto realizado con madera de pino cepillado, acompañados con acrilico y una capa de barniz para mantener el color.",
+      "Producto realizado con hilo o totora de manera artesanal, utilizando dos agujas para realizar un punto.",
     medidas: "Medidas: 9cm de alto x 5cm de ancho",
   },
   {
@@ -83,9 +83,9 @@ const productos = [
     nombre: "Sherk",
     stock: 4,
     img: "./img/product/modelo8.jpg",
-    categoria: "dibujosAnimados",
+    categoria: "redondas",
     descripcion:
-      "Producto realizado con madera de pino cepillado, acompañados con acrilico y una capa de barniz para mantener el color.",
+      "Producto realizado con hilo o totora de manera artesanal, utilizando dos agujas para realizar un punto.",
     medidas: "Medidas: 9cm de alto x 5cm de ancho",
   },
   {
@@ -94,9 +94,9 @@ const productos = [
     nombre: "Chavo",
     stock: 5,
     img: "./img/product/modelo9.jpg",
-    categoria: "dibujosAnimados",
+    categoria: "redondas",
     descripcion:
-      "Producto realizado con madera de pino cepillado, acompañados con acrilico y una capa de barniz para mantener el color.",
+      "Producto realizado con hilo o totora de manera artesanal, utilizando dos agujas para realizar un punto.",
     medidas: "Medidas: 9cm de alto x 5cm de ancho",
   },
   {
@@ -105,9 +105,9 @@ const productos = [
     nombre: "Perrito",
     stock: 1,
     img: "./img/product/modelo10.jpg",
-    categoria: "clasicos",
+    categoria: "basicas",
     descripcion:
-      "Producto realizado con madera de pino cepillado, acompañados con acrilico y una capa de barniz para mantener el color.",
+      "Producto realizado con hilo o totora de manera artesanal, utilizando dos agujas para realizar un punto.",
     medidas: "Medidas: 9cm de alto x 5cm de ancho",
   },
   {
@@ -116,9 +116,9 @@ const productos = [
     nombre: "Perrito",
     stock: 1,
     img: "./img/product/modelo10.jpg",
-    categoria: "clasicos",
+    categoria: "basicas",
     descripcion:
-      "Producto realizado con madera de pino cepillado, acompañados con acrilico y una capa de barniz para mantener el color.",
+      "Producto realizado con hilo o totora de manera artesanal, utilizando dos agujas para realizar un punto.",
     medidas: "Medidas: 9cm de alto x 5cm de ancho",
   },
   {
@@ -127,9 +127,9 @@ const productos = [
     nombre: "Perrito",
     stock: 1,
     img: "./img/product/modelo10.jpg",
-    categoria: "clasicos",
+    categoria: "basicas",
     descripcion:
-      "Producto realizado con madera de pino cepillado, acompañados con acrilico y una capa de barniz para mantener el color.",
+      "Producto realizado con hilo o totora de manera artesanal, utilizando dos agujas para realizar un punto.",
     medidas: "Medidas: 9cm de alto x 5cm de ancho",
   },
 ];

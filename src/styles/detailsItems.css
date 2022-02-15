@@ -1,0 +1,29 @@
+.detailsItemsCard {
+  display: flex;
+  flex-direction: row;
+}
+
+.imagenDetails img {
+  height: 800px;
+}
+.textDetails p {
+  font-size: 30px;
+}
+.cardImgDetails {
+}
+
+.detailsProduct {
+}
+.nameProductDetails {
+  align-items: center;
+  justify-content: center;
+}
+.nameProductDetails p {
+  font-size: 40px;
+  text-align: center;
+}
+
+.priceProductDetails {
+  font-size: 40px;
+  text-align: center;
+}

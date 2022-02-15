@@ -1,0 +1,52 @@
+/* FOOTER */
+footer {
+  background-color: rgb(105, 100, 100);
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 20px;
+}
+
+.plusButton,
+.minusButton {
+  height: 30px;
+  font-size: 20px;
+  width: 30px;
+}
+
+.footerRedes {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  list-style: none;
+}
+
+.footerRedes a {
+  text-decoration: none;
+  list-style: none;
+}
+.footerRedes a img {
+  width: 30px;
+  height: 30px;
+}
+
+.footerContact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerContact p {
+  color: black;
+  margin: 0px;
+}
+.footerText p {
+  margin: 10px;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
