@@ -5,52 +5,13 @@
 }
 
 /* GENERAL */
-nav {
-  background-color: #473633;
+.navbar-brand a {
+  color: #da7d38;
   display: flex;
   align-items: center;
   justify-content: space-around;
   border-bottom: 2px solid white;
 }
-
-nav ul {
-  text-decoration: none;
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-}
-
-nav a {
-  text-decoration: none;
-  color: #956e69;
-  padding: 5px;
-}
-
-.navList {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-}
-.textNav {
-  font-family: "Black Ops One", cursive;
-  font-size: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.textNav p {
-  margin: 0px;
-  padding: 0px;
-  color: white;
-  opacity: 0.5;
-}
-body {
-  background-color: #a7dcf3;
-}
-/* #76A698 */
 
 .bodyGallery {
   width: 95%;
@@ -78,89 +39,9 @@ body {
   margin-top: 10px;
 }
 
-.textInput {
-  margin-top: 10px;
-}
-.check {
-  margin: 10px;
-}
-
 #filterGallery img {
   width: 40px;
   height: 40px;
-}
-
-.fondoCarritoGeneral img {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  margin: 5px;
-  border-radius: 8px;
-  padding: 5px;
-}
-
-main {
-  display: flex;
-  height: 1000px;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center;
-}
-.footerText p {
-  margin: 10px;
-  margin-bottom: 30px;
-  font-size: 20px;
-}
-
-/* FOOTER */
-footer {
-  background-color: black;
-  width: 100%;
-  height: 300px;
-  display: flex;
-  justify-content: space-evenly;
-  font-size: 20px;
-}
-.itemsCountButtoms {
-  display: flex;
-}
-.plusButton,
-.minusButton {
-  height: 30px;
-  font-size: 20px;
-  width: 30px;
-}
-
-.footerRedes {
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  list-style: none;
-}
-
-.footerRedes a {
-  text-decoration: none;
-  list-style: none;
-}
-.footerRedes a img {
-  width: 30px;
-  height: 30px;
-}
-
-.footerContact {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.footerContact p {
-  color: white;
-  margin: 0px;
 }
 
 /* PAGINA INDEX */
@@ -173,24 +54,12 @@ footer {
   justify-content: center;
 }
 
-.indexText {
-  font-size: 20px;
+.textMain {
+  font-size: 30px;
   margin: 30px 10px;
   align-items: center;
   display: flex;
   justify-content: center;
-}
-
-.galleryIndex {
-  width: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.galleryIndex img {
-  width: 100%;
-  height: 500px;
 }
 
 /* PAGINA PRODUCT */
@@ -201,9 +70,15 @@ footer {
   background-color: #9fe3c2;
   border-radius: 8px;
 }
+
+.bodyGallery {
+  background-color: #da7d38;
+  width: 100%;
+  margin-bottom: 10px;
+}
 .galleryProduct {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 40px;
   justify-content: center;
   align-items: center;
@@ -211,8 +86,8 @@ footer {
 }
 
 .cardProduct {
-  background-color: #478289;
-  height: 450px;
+  background-color: #c4cec3;
+  height: 550px;
   border-radius: 8px;
   padding: 5px;
   display: flex;
@@ -226,30 +101,23 @@ footer {
 .btnDiv {
   display: flex;
 }
-.priceStock {
+.priceProduct,
+.nameProduct {
+  font-size: 20px;
+  margin: 10px;
   display: flex;
-  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
-.buttonsDetails {
-  height: 30px;
-  padding: 5px;
-  margin: 5px;
+.itemsCountButtoms {
+  margin-top: 15px;
   border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
 }
 
-.textDescripcion,
-.textMedidas {
-  display: none;
-  color: white;
-  margin: 1px;
-}
-
-.nombre-munheco,
-.contadorStock,
-.precioMunheco {
-  color: white;
-  padding: 5px;
-}
 .cardProduct:hover {
   transform: scale(1.1, 1.1);
 }
@@ -272,9 +140,10 @@ footer {
   height: 40px;
 }
 .buyNow {
+  display: flex;
   align-items: center;
   justify-content: space-evenly;
-  height: 43%;
+  flex-direction: row;
   display: flex;
   border-radius: 8px 8px 0 0;
 }
@@ -287,30 +156,33 @@ footer {
   border-radius: 5px;
   font-size: 5px solid black;
 }
-.buyNow .textBuy a:hover {
-  background-color: #f2e4d8;
-  color: black;
-  box-shadow: 0px 1px 2px #3d3d3d;
-  border-radius: 5px;
-}
-.buyNow img {
-  height: 30px;
-  width: 30px;
-}
-.buyNow .addBuy {
-  background-color: #ccc6c6;
+
+.addBuy {
+  background-color: #e9b4d7;
+  color: white;
+  margin-top: 10px;
+  margin-left: 10px;
   height: 40px;
-  width: 40px;
+  width: 100px;
+  border-radius: 3px;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0px 1px 2px #3d3d3d;
 }
-.buyNow .addBuy :hover {
+.addBuy:hover {
   background-color: #f79ea6;
   box-shadow: 0px 1px 2px #3d3d3d;
   border-radius: 3px;
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 100px;
+}
+.itemCountP {
+  width: 30px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  margin: 0px 5px 0px 5px;
 }
 .alertaProducto {
   display: none;
@@ -341,4 +213,57 @@ footer {
 .iconoAprobar {
   width: 25px;
   height: 25px;
+}
+
+/* FOOTER */
+footer {
+  background-color: rgb(105, 100, 100);
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 20px;
+}
+
+.plusButton,
+.minusButton {
+  height: 30px;
+  font-size: 20px;
+  width: 30px;
+}
+
+.footerRedes {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  list-style: none;
+}
+
+.footerRedes a {
+  text-decoration: none;
+  list-style: none;
+}
+.footerRedes a img {
+  width: 30px;
+  height: 30px;
+}
+
+.footerContact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerContact p {
+  color: black;
+  margin: 0px;
+}
+.footerText p {
+  margin: 10px;
+  margin-bottom: 30px;
+  font-size: 20px;
 }

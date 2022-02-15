@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ItemCount = ({ stock, initial }) => {
+const ItemCount = ({ stock, initial, onAdd }) => {
   let buttonActive = true;
   const [item, setItem] = useState(1);
   const increment = () => {
@@ -16,23 +16,30 @@ const ItemCount = ({ stock, initial }) => {
       setItem(item - 1);
     }
   };
+  onAdd = () => {
+    console.log("Se agrego un producto al carrito");
+  };
 
   return (
     <>
       <div className="itemsCountButtoms">
-        <button className="minusButton" onClick={decrement}>
-          <i className="fa-regular fa-circle-minus"></i>
-        </button>
-        <p>{item}</p>
-        <button
+        <img
+          src="./img/icon/minus.png"
+          onClick={decrement}
+          className="minusButton"
+        ></img>
+
+        <p className="itemCountP">{item}</p>
+        <img
+          src="./img/icon/plus.png"
+          onClick={increment}
           className="plusButton"
           disabled={!buttonActive}
-          onClick={increment}
-        >
-          <i className="fa-circle-plus"></i>
-        </button>
+        ></img>
+        <div className="addBuy" onClick={onAdd}>
+          <p>Add to Cart</p>
+        </div>
       </div>
-      <div className="addBuy">Add to Cart</div>
     </>
   );
 };

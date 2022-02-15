@@ -1,6 +1,7 @@
 import "./App.css";
 import "./styles/cardProduct.css";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import ItemListContainer from "./components/ItemListContainer";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <>
       <Navbar />
       <ItemListContainer gretting="Bienvenidos!" />
+      <Footer />
     </>
   );
 }

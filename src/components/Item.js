@@ -5,17 +5,17 @@ function Item({ item }) {
     <>
       <div className="cardProduct">
         <div className="imagen-producto">
-          <p>{item.nombre}</p>
-          <img src={item.img} alt="Imagenes varias" className="card__menu" />
+          <img src={item.img} alt="Imagenes varias" className="card_img" />
           {/* <p className="detailsProduct">{item.descripcion}</p> */}
-          <p className="price">Precio: ${item.precio}</p>
+          <p className="nameProduct">{item.nombre}</p>
+          <p className="priceProduct">Precio: ${item.precio}</p>
         </div>
         <div className="buyNow">
           <div className="textBuy">
             <a href="a.html">DETALLES</a>
           </div>
-          <ItemCount stock="5" initial="1" />
         </div>
+        <ItemCount stock="5" initial="1" />
       </div>
     </>
   );

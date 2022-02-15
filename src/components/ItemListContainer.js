@@ -26,8 +26,8 @@ const ItemListContainer = () => {
   }, []);
   console.log(datos);
   return (
-    <div>
-      <h1>hola</h1>
+    <div className="bodyGallery">
+      <h1 className="textMain">BIENVENIDOS A MAMITUS - PRODUCTOS A CROCHET</h1>
       <ItemList items={datos}></ItemList>
     </div>
   );

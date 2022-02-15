@@ -4,7 +4,7 @@ const productos = [
     precio: 500,
     nombre: "Iron Man",
     stock: 6,
-    img: "./img/mini/iron.jpg",
+    img: "./img/product/modelo1.jpg",
     categoria: "superheroes",
     descripcion:
       "Producto realizado con madera de pino cepillado, acompañados con acrilico y una capa de barniz para mantener el color.",
@@ -15,7 +15,7 @@ const productos = [
     precio: 500,
     nombre: "Flash",
     stock: 5,
-    img: "./img/mini/flash.jpg",
+    img: "./img/product/modelo2.jpg",
     categoria: "superheroes",
     descripcion:
       "Producto realizado con madera de pino cepillado, acompañados con acrilico y una capa de barniz para mantener el color.",
@@ -26,7 +26,7 @@ const productos = [
     precio: 500,
     nombre: "Capitan America",
     stock: 6,
-    img: "./img/mini/america2.jpg",
+    img: "./img/product/modelo3.jpg",
     categoria: "superheroes",
     descripcion:
       "Producto realizado con madera de pino cepillado, acompañados con acrilico y una capa de barniz para mantener el color.",
@@ -37,7 +37,7 @@ const productos = [
     precio: 500,
     nombre: "Buzzlightyear",
     stock: 3,
-    img: "./img/mini/buzz.jpg",
+    img: "./img/product/modelo4.jpg",
     categoria: "dibujosAnimados",
     descripcion:
       "Producto realizado con madera de pino cepillado, acompañados con acrilico y una capa de barniz para mantener el color.",
@@ -48,7 +48,7 @@ const productos = [
     precio: 500,
     nombre: "Thor",
     stock: 3,
-    img: "./img/mini/thor.jpg",
+    img: "./img/product/modelo5.jpg",
     categoria: "superheroes",
     descripcion:
       "Producto realizado con madera de pino cepillado, acompañados con acrilico y una capa de barniz para mantener el color.",
@@ -59,7 +59,7 @@ const productos = [
     precio: 500,
     nombre: "Batman",
     stock: 6,
-    img: "./img/mini/batman.jpg",
+    img: "./img/product/modelo6.jpg",
     categoria: "superheroes",
     descripcion:
       "Producto realizado con madera de pino cepillado, acompañados con acrilico y una capa de barniz para mantener el color.",
@@ -71,7 +71,7 @@ const productos = [
     precio: 300,
     nombre: "Harry Potter",
     stock: 3,
-    img: "./img/mini/harry.jpg",
+    img: "./img/product/modelo7.jpg",
     categoria: "clasicos",
     descripcion:
       "Producto realizado con madera de pino cepillado, acompañados con acrilico y una capa de barniz para mantener el color.",
@@ -82,7 +82,7 @@ const productos = [
     precio: 300,
     nombre: "Sherk",
     stock: 4,
-    img: "./img/mini/sherk.jpg",
+    img: "./img/product/modelo8.jpg",
     categoria: "dibujosAnimados",
     descripcion:
       "Producto realizado con madera de pino cepillado, acompañados con acrilico y una capa de barniz para mantener el color.",
@@ -93,7 +93,7 @@ const productos = [
     precio: 300,
     nombre: "Chavo",
     stock: 5,
-    img: "./img/mini/chavo.jpg",
+    img: "./img/product/modelo9.jpg",
     categoria: "dibujosAnimados",
     descripcion:
       "Producto realizado con madera de pino cepillado, acompañados con acrilico y una capa de barniz para mantener el color.",
@@ -104,7 +104,7 @@ const productos = [
     precio: 300,
     nombre: "Perrito",
     stock: 1,
-    img: "./img/mini/perrito.jpg",
+    img: "./img/product/modelo10.jpg",
     categoria: "clasicos",
     descripcion:
       "Producto realizado con madera de pino cepillado, acompañados con acrilico y una capa de barniz para mantener el color.",
@@ -113,9 +113,9 @@ const productos = [
   {
     id: 11,
     precio: 300,
-    nombre: "Diamante",
+    nombre: "Perrito",
     stock: 1,
-    img: "./img/mini/diamond.jpg",
+    img: "./img/product/modelo10.jpg",
     categoria: "clasicos",
     descripcion:
       "Producto realizado con madera de pino cepillado, acompañados con acrilico y una capa de barniz para mantener el color.",
@@ -124,46 +124,12 @@ const productos = [
   {
     id: 12,
     precio: 300,
-    nombre: "C3P0",
-    stock: 2,
-    img: "./img/mini/c3p0.jpg",
+    nombre: "Perrito",
+    stock: 1,
+    img: "./img/product/modelo10.jpg",
     categoria: "clasicos",
     descripcion:
       "Producto realizado con madera de pino cepillado, acompañados con acrilico y una capa de barniz para mantener el color.",
-    medidas: "Medidas: 9cm de alto x 5cm de ancho",
-  },
-
-  {
-    id: 13,
-    precio: 300,
-    nombre: "Vampirina",
-    stock: 6,
-    img: "../img/mini/vampirina.jpg",
-    categoria: "dibujosAnimados",
-    descripcion:
-      "Producto realizado con madera de pino cepillado, acompañados con acrilico y una capa de barniz para mantener el color.",
-    medidas: "Medidas: 9cm de alto x 5cm de ancho",
-  },
-  {
-    id: 14,
-    precio: 300,
-    nombre: "Hello Kitty",
-    stock: 1,
-    img: "./img/mini/helloKitty.jpg",
-    categoria: "dibujosAnimados",
-    descripcion:
-      "Producto realizado con madera de pino cepillado, acompañados con acrilico y una capa de barniz para mantener el color.",
-    medidas: "Medidas: 9cm de alto x 5cm de ancho",
-  },
-  {
-    id: 15,
-    precio: 300,
-    nombre: "Vanellope",
-    stock: 2,
-    img: "./img/mini/vanellope.jpg",
-    categoria: "dibujosAnimados",
-    descripcion:
-      "Realizado con madera de pino cepillado, pintados en acrilico y con una capa de barniz para mantener el color.",
     medidas: "Medidas: 9cm de alto x 5cm de ancho",
   },
 ];
