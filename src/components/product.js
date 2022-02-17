@@ -5,7 +5,7 @@ const productos = [
     nombre: "Iron Man",
     stock: 6,
     img: "./img/product/modelo1.jpg",
-    categoria: "cuadrada",
+    categoria: "cuadradas",
     descripcion:
       "Producto realizado con hilo o totora de manera artesanal, utilizando dos agujas para realizar un punto.",
     medidas: "Medidas: 9cm de alto x 5cm de ancho",
@@ -16,7 +16,7 @@ const productos = [
     nombre: "Flash",
     stock: 5,
     img: "./img/product/modelo2.jpg",
-    categoria: "cuadrada",
+    categoria: "cuadradas",
     descripcion:
       "Producto realizado con hilo o totora de manera artesanal, utilizando dos agujas para realizar un punto.",
     medidas: "Medidas: 9cm de alto x 5cm de ancho",
@@ -27,7 +27,7 @@ const productos = [
     nombre: "Capitan America",
     stock: 6,
     img: "./img/product/modelo3.jpg",
-    categoria: "cuadrada",
+    categoria: "cuadradas",
     descripcion:
       "Producto realizado con hilo o totora de manera artesanal, utilizando dos agujas para realizar un punto.",
     medidas: "Medidas: 9cm de alto x 5cm de ancho",
@@ -49,7 +49,7 @@ const productos = [
     nombre: "Thor",
     stock: 3,
     img: "./img/product/modelo5.jpg",
-    categoria: "cuadrada",
+    categoria: "cuadradas",
     descripcion:
       "Producto realizado con hilo o totora de manera artesanal, utilizando dos agujas para realizar un punto.",
     medidas: "Medidas: 9cm de alto x 5cm de ancho",
@@ -60,7 +60,7 @@ const productos = [
     nombre: "Alfombra roja con azul",
     stock: 6,
     img: "./img/product/modelo6.jpg",
-    categoria: "cuadrada",
+    categoria: "cuadradas",
     descripcion:
       "Producto realizado con hilo o totora de manera artesanal, utilizando dos agujas para realizar un punto.",
     medidas: "Medidas: 9cm de alto x 5cm de ancho",

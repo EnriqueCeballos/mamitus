@@ -1,13 +1,14 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import CartWidget from "./CartWidget.js";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          MAMITUS
-        </a>
+        <Link to="/">
+          <a className="navbar-brand">MAMITUS</a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -22,19 +23,18 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-                Inicio
-              </a>
+              <Link to="/">
+                <a className="nav-link active" aria-current="page">
+                  Inicio
+                </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Ferias
-              </a>
+              <a className="nav-link">Ferias</a>
             </li>
-            <li className="nav-item dropdown">
+            {/* <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"
-                href="#"
                 id="navbarDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -42,30 +42,36 @@ const Navbar = () => {
               >
                 Productos
               </a>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Alfombras
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Canastos
-                  </a>
-                </li>
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Macetas
-                  </a>
-                </li>
-              </ul>
+              <ul className="dropdown-menu" aria-labelledby="navbarDropdown"> */}
+            <li>
+              <Link to={"/categoria/redondas"}>
+                <a className="dropdown-item" href="">
+                  Alfombras Redondas
+                </a>
+              </Link>
             </li>
-            <li className="nav-item">
-              <a className="nav-link disabled">Nosotros</a>
+            <li>
+              <Link to={"/categoria/cuadradas"}>
+                <a className="dropdown-item" href="">
+                  Alfombras Cuadradas
+                </a>
+              </Link>
             </li>
+            <li>
+              <hr className="dropdown-divider" />
+            </li>
+            <li>
+              <Link to={"/categoria/basicas"}>
+                <a className="dropdown-item" href="">
+                  Alfombras Basicas
+                </a>
+              </Link>
+            </li>
+            {/* </ul> */}
+            {/* </li> */}
+            {/* <li className="nav-item">
+              <a className="nav-link ">Nosotros</a>
+            </li> */}
           </ul>
           <form className="d-flex">
             <input

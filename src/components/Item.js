@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 
 function Item({ item }) {
@@ -12,7 +13,7 @@ function Item({ item }) {
         </div>
         <div className="buyNow">
           <div className="textBuy">
-            <a href="a.html">DETALLES</a>
+            <Link to="/item">DETALLES</Link>
           </div>
         </div>
         <ItemCount stock="5" initial="1" />

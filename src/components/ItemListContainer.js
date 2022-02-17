@@ -1,12 +1,13 @@
 import ItemList from "./ItemList";
 import { useEffect, useState } from "react";
 import productos from "./product.js";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
   const [datos, setDatos] = useState([]);
 
   let opcionValida = true;
-
+  const { idCategory } = useParams();
   const customFetch = (timeout, data) => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -20,11 +21,20 @@ const ItemListContainer = () => {
   };
 
   useEffect(() => {
-    customFetch(2000, productos)
-      .then((result) => setDatos(result))
-      .catch((err) => console.log(err));
-  }, []);
-  console.log(datos);
+    if (idCategory === undefined) {
+      customFetch(2000, productos)
+        .then((result) => setDatos(result))
+        .catch((err) => console.log(err));
+    } else {
+      customFetch(
+        2000,
+        productos.filter((item) => item.categoria === idCategory)
+      )
+        .then((result) => setDatos(result))
+        .catch((err) => console.log(err));
+    }
+  }, [idCategory]);
+
   return (
     <div className="bodyGallery">
       <h1 className="textMain">BIENVENIDOS A MAMITUS - PRODUCTOS A CROCHET</h1>

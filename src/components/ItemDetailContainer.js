@@ -6,7 +6,7 @@ import productos from "./product.js";
 const ItemDetailContainer = () => {
   const [dato, setDato] = useState({});
   const getItem = () => {
-    customFetch(2000, productos[5])
+    customFetch(2000, productos[parseInt()])
       .then((resultado) => setDato(resultado))
       .catch((error) => console.log(error));
   };
