@@ -20,7 +20,7 @@ const ItemDetailContainer = () => {
 
   const [dato, setDatos] = useState({});
   const { idItem } = useParams();
-  console.log(idItem);
+
   const getItem = () => {
     if (idItem === undefined) {
       customFetch(1000, productos)

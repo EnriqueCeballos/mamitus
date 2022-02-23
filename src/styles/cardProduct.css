@@ -157,7 +157,7 @@
   font-size: 5px solid black;
 }
 
-.addBuy {
+.addCart {
   background-color: #e9b4d7;
   color: white;
   margin-top: 10px;
@@ -170,7 +170,7 @@
   align-items: center;
   box-shadow: 0px 1px 2px #3d3d3d;
 }
-.addBuy:hover {
+.addCart:hover {
   background-color: #f79ea6;
   box-shadow: 0px 1px 2px #3d3d3d;
   border-radius: 3px;
@@ -213,4 +213,11 @@
 .iconoAprobar {
   width: 25px;
   height: 25px;
+}
+
+.cartPage {
+  height: 500px;
+}
+.cartPage p {
+  font-size: 40px;
 }

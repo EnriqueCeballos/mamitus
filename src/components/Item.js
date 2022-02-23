@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import ItemCount from "./ItemCount";
 import { useEffect, useState } from "react";
 import productos from "./product.js";
 
@@ -36,7 +35,6 @@ function Item({ item }) {
             <Link to={`/item/${item.id}`}>DETALLES</Link>
           </div>
         </div>
-        <ItemCount stock="5" initial="1" />
       </div>
     </>
   );

@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const ItemCount = ({ stock, initial, onAdd }) => {
   let buttonActive = true;
-  const [item, setItem] = useState(1);
+  const [item, setItem] = useState(parseInt(initial));
   const increment = () => {
     if (item < stock) {
       setItem(item + 1);
@@ -16,8 +17,8 @@ const ItemCount = ({ stock, initial, onAdd }) => {
       setItem(item - 1);
     }
   };
-  onAdd = () => {
-    console.log("Se agrego un producto al carrito");
+  const agregar = () => {
+    onAdd(item);
   };
 
   return (
@@ -36,8 +37,8 @@ const ItemCount = ({ stock, initial, onAdd }) => {
           className="plusButton"
           disabled={!buttonActive}
         ></img>
-        <div className="addBuy" onClick={onAdd}>
-          <p>Add to Cart</p>
+        <div className="addBuy" onClick={agregar}>
+          <button className="addCart">Agregar al carrito</button>
         </div>
       </div>
     </>
