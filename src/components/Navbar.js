@@ -44,28 +44,16 @@ const Navbar = () => {
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown"> */}
             <li>
-              <Link to={"/categoria/redondas"}>
-                <a className="dropdown-item" href="">
-                  Alfombras Redondas
-                </a>
-              </Link>
+              <Link to={"/categoria/redondas"}>Alfombras Redondas</Link>
             </li>
             <li>
-              <Link to={"/categoria/cuadradas"}>
-                <a className="dropdown-item" href="">
-                  Alfombras Cuadradas
-                </a>
-              </Link>
+              <Link to={"/categoria/cuadradas"}>Alfombras Cuadradas</Link>
             </li>
             <li>
               <hr className="dropdown-divider" />
             </li>
             <li>
-              <Link to={"/categoria/basicas"}>
-                <a className="dropdown-item" href="">
-                  Alfombras Basicas
-                </a>
-              </Link>
+              <Link to={"/categoria/basicas"}>Alfombras Basicas</Link>
             </li>
             {/* </ul> */}
             {/* </li> */}
@@ -91,3 +79,35 @@ const Navbar = () => {
   );
 };
 export default Navbar;
+
+// import { useEffect, useState } from "react";
+// import customFetch from "./utils/customFetch";
+// import ItemDetail from "./ItemDetail";
+// import productos from "./product.js";
+// import { useParams } from "react-router-dom";
+
+// const ItemDetailContainer = () => {
+//   const { idItem } = useParams();
+//   const [dato, setDato] = useState({});
+//   const getItem = () => {
+//     if (idItem === undefined) {
+//       customFetch(2000, productos)
+//         .then((result) => setDato(result))
+//         .catch((err) => console.log(err));
+//     } else {
+//       customFetch(
+//         2000,
+//         productos.find((item) => item.id === parseInt(idItem))
+//       )
+//         .then((resultado) => setDato(resultado))
+//         .catch((error) => console.log(error));
+//     }
+//     useEffect(() => {
+//       getItem();
+//     }, [idItem]);
+
+//     return <ItemDetail item={dato} />;
+//   };
+// };
+
+// export default ItemDetailContainer;

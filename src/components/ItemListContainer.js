@@ -22,7 +22,7 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     if (idCategory === undefined) {
-      customFetch(2000, productos)
+      customFetch(1000, productos)
         .then((result) => setDatos(result))
         .catch((err) => console.log(err));
     } else {

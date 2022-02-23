@@ -1,18 +1,43 @@
 import { useEffect, useState } from "react";
-import customFetch from "./utils/customFetch";
 import ItemDetail from "./ItemDetail";
 import productos from "./product.js";
+import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
-  const [dato, setDato] = useState({});
+  let opcionValida = true;
+
+  const customFetch = (timeout, data) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (opcionValida) {
+          resolve(data);
+        } else {
+          reject("Producto no encontrado");
+        }
+      }, timeout);
+    });
+  };
+
+  const [dato, setDatos] = useState({});
+  const { idItem } = useParams();
+  console.log(idItem);
   const getItem = () => {
-    customFetch(2000, productos[parseInt()])
-      .then((resultado) => setDato(resultado))
-      .catch((error) => console.log(error));
+    if (idItem === undefined) {
+      customFetch(1000, productos)
+        .then((result) => setDatos(result))
+        .catch((err) => console.log(err));
+    } else {
+      customFetch(
+        2000,
+        productos.find((item) => item.id === parseInt(idItem))
+      )
+        .then((result) => setDatos(result))
+        .catch((err) => console.log(err));
+    }
   };
   useEffect(() => {
     getItem();
-  }, []);
+  }, [idItem]);
 
   return <ItemDetail item={dato} />;
 };
