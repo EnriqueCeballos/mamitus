@@ -221,3 +221,16 @@
 .cartPage p {
   font-size: 40px;
 }
+.compraProducto {
+  display: none;
+  position: fixed;
+  background-color: white;
+  color: black;
+  width: 200px;
+  height: 70px;
+  bottom: 5%;
+  right: 2%;
+  border-radius: 8px;
+  margin: auto;
+  font-size: 20px;
+}

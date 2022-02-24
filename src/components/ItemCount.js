@@ -1,9 +1,13 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const ItemCount = ({ stock, initial, onAdd }) => {
   let buttonActive = true;
-  const [item, setItem] = useState(parseInt(initial));
+  const [item, setItem] = useState(0);
+
+  useEffect(() => {
+    setItem(initial);
+  }, []);
+
   const increment = () => {
     if (item < stock) {
       setItem(item + 1);
@@ -19,7 +23,23 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   };
   const agregar = () => {
     onAdd(item);
+    // mostrarAlertaCompra();
   };
+  // let compraProducto = document.getElementsByClassName("compraProducto");
+
+  // function mostrarAlertaCompra() {
+  //   compraProducto = "";
+  //   compraProducto.prepend(`
+
+  //       <p>
+  //       <img class="iconoAprobar" src="/img/iconos/aprobar.png" alt="" />
+  //       Se agrego el producto al carrito
+  //       </p>`);
+
+  //   compraProducto.fadeIn(1500, function () {
+  //     compraProducto.fadeOut(1500);
+  //   });
+  // }
 
   return (
     <>
@@ -28,6 +48,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
           src="./img/icon/minus.png"
           onClick={decrement}
           className="minusButton"
+          alt="Boton -"
         ></img>
 
         <p className="itemCountP">{item}</p>
@@ -36,6 +57,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
           onClick={increment}
           className="plusButton"
           disabled={!buttonActive}
+          alt="Boton +"
         ></img>
         <div className="addBuy" onClick={agregar}>
           <button className="addCart">Agregar al carrito</button>
