@@ -7,7 +7,7 @@ import { useContext } from "react";
 const CartWidget = () => {
   const prueba = useContext(CartContext);
   return (
-    <Badge badgeContent={prueba.calculoItemSQty(0)} color="secondary">
+    <Badge badgeContent={prueba.calculoItemSQty()} color="secondary">
       <div className="buy">
         <Link to="/cart">
           <img src={`/img/icon/shopping-bag.png`} alt="Shopping Bag" />
