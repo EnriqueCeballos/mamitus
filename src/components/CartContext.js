@@ -3,16 +3,18 @@ import { createContext, useState } from "react";
 export const CartContext = createContext();
 
 const CartContextProvider = ({ children }) => {
-  const [cartList, setCartList] = useState([]);
+  const [listaDelCarrito, setlistaDelCarrito] = useState([]);
 
   const addToCart = (item, qty) => {
-    let busqueda = cartList.find((producto) => producto.item === item.id);
+    let busqueda = listaDelCarrito.find(
+      (producto) => producto.idItem === item.id
+    );
     if (busqueda === undefined) {
-      setCartList([
-        ...cartList,
+      setlistaDelCarrito([
+        ...listaDelCarrito,
         {
           idItem: item.id,
-          imgItem: item.img[0],
+          imgItem: item.img,
           nameItem: item.nombre,
           precio: item.precio,
           qtyItem: qty,
@@ -23,19 +25,21 @@ const CartContextProvider = ({ children }) => {
     }
   };
   const removeList = () => {
-    setCartList([]);
+    setlistaDelCarrito([]);
   };
   const deleteItem = (id) => {
-    let resultado = cartList.filter((item) => item.idItem !== id);
-    setCartList(resultado);
+    let resultado = listaDelCarrito.filter((item) => item.idItem !== id);
+    setlistaDelCarrito(resultado);
   };
   const calculoTotalPorItem = (idItem) => {
-    let index = cartList.map((item) => item.idItem).indexOf(idItem);
-    return cartList[index].precio * cartList[index].qtyItem;
+    let index = listaDelCarrito.map((item) => item.idItem).indexOf(idItem);
+    return listaDelCarrito[index].precio * listaDelCarrito[index].qtyItem;
   };
 
   const calculoSubTotal = () => {
-    let totalPorItem = cartList.map((item) => calculoTotalPorItem(item.idItem));
+    let totalPorItem = listaDelCarrito.map((item) =>
+      calculoTotalPorItem(item.idItem)
+    );
     return totalPorItem.reduce(
       (valorPrevio, valorActual) => valorPrevio + valorActual
     );
@@ -43,8 +47,8 @@ const CartContextProvider = ({ children }) => {
   const calculoTotal = () => {
     return calculoSubTotal();
   };
-  const calculoItemSQty = () => {
-    let qtys = cartList.map((item) => item.qtyItem);
+  const calculoItemsQty = () => {
+    let qtys = listaDelCarrito.map((item) => item.qtyItem);
     return qtys.reduce(
       (valorPrevio, valorActual) => valorPrevio + valorActual,
       0
@@ -52,16 +56,16 @@ const CartContextProvider = ({ children }) => {
   };
   return (
     <CartContext.Provider
-      value={[
-        cartList,
+      value={{
+        listaDelCarrito,
         addToCart,
         removeList,
         deleteItem,
         calculoTotalPorItem,
         calculoSubTotal,
         calculoTotal,
-        calculoItemSQty,
-      ]}
+        calculoItemsQty,
+      }}
     >
       {children}
     </CartContext.Provider>

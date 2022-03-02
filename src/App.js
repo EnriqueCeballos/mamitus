@@ -8,9 +8,10 @@ import ItemListContainer from "./components/ItemListContainer";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Cart from "./components/Cart";
+import CartContextProvider from "./components/CartContext";
 function App() {
   return (
-    <>
+    <CartContextProvider>
       <BrowserRouter>
         <Navbar />
         <Routes>
@@ -24,7 +25,7 @@ function App() {
         </Routes>
         <Footer />
       </BrowserRouter>
-    </>
+    </CartContextProvider>
   );
 }
 

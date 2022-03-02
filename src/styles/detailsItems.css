@@ -10,6 +10,7 @@
   font-size: 30px;
 }
 .cardImgDetails {
+  width: 200px;
 }
 
 .detailsProduct {
@@ -26,4 +27,20 @@
 .priceProductDetails {
   font-size: 40px;
   text-align: center;
+}
+
+.cardDetailInfo {
+  display: flex;
+
+  justify-content: space-around;
+  flex-direction: column;
+}
+.cardDetailInfo p {
+  font-size: 15px;
+}
+.detailProduct {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 }

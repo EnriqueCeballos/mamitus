@@ -1,17 +1,16 @@
 import ItemCount from "./ItemCount";
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import CartContext from "./CartContext";
+import { CartContext } from "./CartContext";
 
 function ItemDetail({ item }) {
   const [stock, setStock] = useState(0);
   const prueba = useContext(CartContext);
 
-  const addToCart = (unity) => {
-    alert(`Agregaste ${unity} producto(s) al carrito`);
-
-    setStock(unity);
-    prueba.addToCart(item, unity);
+  const onAdd = (qty) => {
+    alert(`Agregaste ${qty} producto(s) al carrito`);
+    setStock(qty);
+    prueba.addToCart(item, qty);
   };
 
   return (
@@ -19,7 +18,7 @@ function ItemDetail({ item }) {
       <div className="detailsItemsCard">
         <div className="imagenDetails">
           <img
-            src={item.img}
+            src={"." + item.img}
             alt="Imagenes varias"
             className="cardImgDetails"
           />
@@ -28,14 +27,17 @@ function ItemDetail({ item }) {
           <p className="nameProductDetails">{item.nombre}</p>
           <p className="detailsProduct">{item.descripcion}</p>
           <p className="priceProductDetails">Precio: ${item.precio}</p>
+          <p className="stockProductDetails">
+            Disponible(s): {item.stock}Unidad(es)
+          </p>
         </div>
         <div className="compraProducto"></div>
         <div className="buyNow">
           {stock === 0 ? (
-            <ItemCount stock="5" initial="1" onAdd={addToCart} />
+            <ItemCount stock="5" initial="1" onAdd={onAdd} />
           ) : (
             <Link to="/cart" className="buttonCart">
-              Ir al carrito
+              Terminar compra
             </Link>
           )}
         </div>

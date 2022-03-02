@@ -6,9 +6,10 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
-        <Link to="/">
-          <a className="navbar-brand">MAMITUS</a>
+        <Link to="/" className="navbar-brand">
+          MAMITUS
         </Link>
+
         <button
           className="navbar-toggler"
           type="button"
@@ -23,17 +24,18 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link to="/">
-                <a className="nav-link active" aria-current="page">
-                  Inicio
-                </a>
+              <Link to="/" className="nav-link active" aria-current="page">
+                Inicio
               </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link">Ferias</a>
+              <Link to="/ferias" className="nav-link">
+                Ferias
+              </Link>
             </li>
-            {/* <li className="nav-item dropdown">
-              <a
+            <li className="nav-item dropdown">
+              <Link
+                to="/"
                 className="nav-link dropdown-toggle"
                 id="navbarDropdown"
                 role="button"
@@ -41,25 +43,33 @@ const Navbar = () => {
                 aria-expanded="false"
               >
                 Productos
-              </a>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdown"> */}
-            <li>
-              <Link to={"/categoria/redondas"}>Alfombras Redondas</Link>
+              </Link>
+              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <Link to={"/categoria/redondas"} className="dropdown-item">
+                    Alfombras Redondas
+                  </Link>
+                </li>
+                <li>
+                  <Link to={"/categoria/cuadradas"} className="dropdown-item">
+                    Alfombras Cuadradas
+                  </Link>
+                </li>
+                <li>
+                  <hr className="dropdown-divider" />
+                </li>
+                <li>
+                  <Link to={"/categoria/basicas"} className="dropdown-item">
+                    Alfombras Basicas
+                  </Link>
+                </li>
+              </ul>
             </li>
-            <li>
-              <Link to={"/categoria/cuadradas"}>Alfombras Cuadradas</Link>
+            <li className="nav-item">
+              <Link to="/nosotros" className="nav-link ">
+                Nosotros
+              </Link>
             </li>
-            <li>
-              <hr className="dropdown-divider" />
-            </li>
-            <li>
-              <Link to={"/categoria/basicas"}>Alfombras Basicas</Link>
-            </li>
-            {/* </ul> */}
-            {/* </li> */}
-            {/* <li className="nav-item">
-              <a className="nav-link ">Nosotros</a>
-            </li> */}
           </ul>
           <form className="d-flex">
             <input
@@ -79,35 +89,3 @@ const Navbar = () => {
   );
 };
 export default Navbar;
-
-// import { useEffect, useState } from "react";
-// import customFetch from "./utils/customFetch";
-// import ItemDetail from "./ItemDetail";
-// import productos from "./product.js";
-// import { useParams } from "react-router-dom";
-
-// const ItemDetailContainer = () => {
-//   const { idItem } = useParams();
-//   const [dato, setDato] = useState({});
-//   const getItem = () => {
-//     if (idItem === undefined) {
-//       customFetch(2000, productos)
-//         .then((result) => setDato(result))
-//         .catch((err) => console.log(err));
-//     } else {
-//       customFetch(
-//         2000,
-//         productos.find((item) => item.id === parseInt(idItem))
-//       )
-//         .then((resultado) => setDato(resultado))
-//         .catch((error) => console.log(error));
-//     }
-//     useEffect(() => {
-//       getItem();
-//     }, [idItem]);
-
-//     return <ItemDetail item={dato} />;
-//   };
-// };
-
-// export default ItemDetailContainer;

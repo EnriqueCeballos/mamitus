@@ -3,9 +3,11 @@ import Item from "./Item.js";
 const ItemList = ({ items }) => {
   return (
     <div className="galleryProduct">
-      {items.map((item) => (
-        <Item item={item} key={item.id}></Item>
-      ))}
+      {items.length > 0 ? (
+        items.map((item) => <Item item={item} key={item.id}></Item>)
+      ) : (
+        <p>Cargando</p>
+      )}
     </div>
   );
 };

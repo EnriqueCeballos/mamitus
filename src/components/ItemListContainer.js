@@ -20,19 +20,31 @@ const ItemListContainer = () => {
     });
   };
 
+  // useEffect(() => {
+  //   if (idCategory === undefined) {
+  //     customFetch(500, productos)
+  //       .then((result) => setDatos(result))
+  //       .catch((err) => console.log(err));
+  //   } else {
+  //     customFetch(
+  //       500,
+  //       productos.filter((item) => item.categoria === idCategory)
+  //     )
+  //       .then((result) => setDatos(result))
+  //       .catch((err) => console.log(err));
+  //   }
+  // }, [idCategory]);
+
   useEffect(() => {
-    if (idCategory === undefined) {
-      customFetch(1000, productos)
-        .then((result) => setDatos(result))
-        .catch((err) => console.log(err));
-    } else {
-      customFetch(
-        2000,
-        productos.filter((item) => item.categoria === idCategory)
-      )
-        .then((result) => setDatos(result))
-        .catch((err) => console.log(err));
-    }
+    customFetch(
+      500,
+      productos.filter((item) => {
+        if (idCategory === undefined) return item;
+        return item.categoria === idCategory;
+      })
+    )
+      .then((result) => setDatos(result))
+      .catch((err) => console.log(err));
   }, [idCategory]);
 
   return (
