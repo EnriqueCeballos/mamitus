@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import CartWidget from "./CartWidget.js";
 import { Link } from "react-router-dom";
+import Filter from "./Filter";
 
 const Navbar = () => {
   return (
@@ -33,56 +34,34 @@ const Navbar = () => {
                 Ferias
               </Link>
             </li>
-            <li className="nav-item dropdown">
-              <Link
-                to="/"
-                className="nav-link dropdown-toggle"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Productos
+            <li>
+              <Link to={"/categoria/redondas"} className="nav-link ">
+                Alfombras Redondas
               </Link>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                  <Link to={"/categoria/redondas"} className="dropdown-item">
-                    Alfombras Redondas
-                  </Link>
-                </li>
-                <li>
-                  <Link to={"/categoria/cuadradas"} className="dropdown-item">
-                    Alfombras Cuadradas
-                  </Link>
-                </li>
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-                <li>
-                  <Link to={"/categoria/basicas"} className="dropdown-item">
-                    Alfombras Basicas
-                  </Link>
-                </li>
-              </ul>
             </li>
+            <li>
+              <Link to={"/categoria/cuadradas"} className="nav-link ">
+                Alfombras Cuadradas
+              </Link>
+            </li>
+            <li>
+              <hr className="dropdown-divider" />
+            </li>
+            <li>
+              <Link to={"/categoria/basicas"} className="nav-link ">
+                Alfombras Basicas
+              </Link>
+            </li>
+
             <li className="nav-item">
               <Link to="/nosotros" className="nav-link ">
                 Nosotros
               </Link>
             </li>
           </ul>
-          <form className="d-flex">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Buscar"
-              aria-label="Search"
-            />
-            <button className="btn btn-outline-success" type="submit">
-              Buscar
-            </button>
-            <CartWidget />
-          </form>
+          <Filter />
+
+          <CartWidget />
         </div>
       </div>
     </nav>

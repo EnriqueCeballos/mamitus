@@ -2,50 +2,25 @@ import ItemList from "./ItemList";
 import { useEffect, useState } from "react";
 import productos from "./product.js";
 import { useParams } from "react-router-dom";
+import { collection, getDocs } from "firebase/firestore";
+import db from "./utils/FirebaseConfig";
 
 const ItemListContainer = () => {
   const [datos, setDatos] = useState([]);
-
-  let opcionValida = true;
   const { idCategory } = useParams();
-  const customFetch = (timeout, data) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (opcionValida) {
-          resolve(data);
-        } else {
-          reject("Producto no encontrado");
-        }
-      }, timeout);
-    });
-  };
-
-  // useEffect(() => {
-  //   if (idCategory === undefined) {
-  //     customFetch(500, productos)
-  //       .then((result) => setDatos(result))
-  //       .catch((err) => console.log(err));
-  //   } else {
-  //     customFetch(
-  //       500,
-  //       productos.filter((item) => item.categoria === idCategory)
-  //     )
-  //       .then((result) => setDatos(result))
-  //       .catch((err) => console.log(err));
-  //   }
-  // }, [idCategory]);
 
   useEffect(() => {
-    customFetch(
-      500,
-      productos.filter((item) => {
-        if (idCategory === undefined) return item;
-        return item.categoria === idCategory;
-      })
-    )
+    const firestoreFetch = async () => {
+      const querySnapshot = await getDocs(collection(db, "item"));
+      return querySnapshot.docs.map((document) => ({
+        id: document.id,
+        ...document.data(),
+      }));
+    };
+    firestoreFetch()
       .then((result) => setDatos(result))
-      .catch((err) => console.log(err));
-  }, [idCategory]);
+      .catch((error) => console.log(error));
+  }, [datos]);
 
   return (
     <div className="bodyGallery">

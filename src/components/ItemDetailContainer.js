@@ -1,43 +1,31 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
-import productos from "./product.js";
+import db from "./utils/FirebaseConfig";
+import { doc, getDoc } from "firebase/firestore";
 import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
-  let opcionValida = true;
-
-  const customFetch = (timeout, data) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (opcionValida) {
-          resolve(data);
-        } else {
-          reject("Producto no encontrado");
-        }
-      }, timeout);
-    });
-  };
-
   const [dato, setDatos] = useState({});
   const { idItem } = useParams();
 
-  const getItem = () => {
-    if (idItem === undefined) {
-      customFetch(1000, productos)
-        .then((result) => setDatos(result))
-        .catch((err) => console.log(err));
-    } else {
-      customFetch(
-        2000,
-        productos.find((item) => item.id === parseInt(idItem))
-      )
-        .then((result) => setDatos(result))
-        .catch((err) => console.log(err));
-    }
-  };
   useEffect(() => {
-    getItem();
-  }, [idItem]);
+    const firestoreFetchOne = async () => {
+      const docRef = doc(db, "item", idItem);
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        return docSnap.map((item) => ({
+          id: idItem,
+          ...item.data(),
+        }));
+      } else {
+        return <div className="errorItems">PRODUCTO NO ENCONTRADO!</div>;
+      }
+    };
+    firestoreFetchOne()
+      .then((result) => setDatos(result))
+      .catch((error) => console.log(error));
+  }, [dato]);
 
   return <ItemDetail item={dato} />;
 };
