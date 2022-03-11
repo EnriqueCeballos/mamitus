@@ -14,10 +14,10 @@ const ItemDetailContainer = () => {
       const docSnap = await getDoc(docRef);
 
       if (docSnap.exists()) {
-        return docSnap.map((item) => ({
+        return {
           id: idItem,
-          ...item.data(),
-        }));
+          ...docSnap.data(),
+        };
       } else {
         return <div className="errorItems">PRODUCTO NO ENCONTRADO!</div>;
       }

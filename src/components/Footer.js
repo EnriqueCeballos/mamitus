@@ -4,14 +4,14 @@ const Footer = () => {
       <footer>
         <div className="footerRedes">
           <a href="index.html">
-            <img src="../img/iconos/inicio.png" alt="" /> Inicio
+            <img src="/img/icon/inicio.png" alt="" /> Inicio
           </a>
           <a href="https://fb.me/mamitus.cba">
-            <img src="../img/iconos/facebook.png" alt="" />
+            <img src="/img/icon/facebook.png" alt="" />
             Facebook
           </a>
           <a href="https://www.instagram.com/mamitus.cba/">
-            <img src="../img/iconos/instagram.png" alt="" />
+            <img src="/img/icon/instagram.png" alt="" />
             Instagram
           </a>
         </div>

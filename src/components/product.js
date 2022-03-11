@@ -3,7 +3,7 @@ const productos = [
     id: 1,
     precio: 700,
     nombre: "Alfombra Azul y Naranja",
-    stock: 6,
+    stock: 0,
     img: "./img/product/modelo1.jpg",
     categoria: "cuadradas",
     descripcion:

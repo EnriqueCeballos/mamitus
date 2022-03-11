@@ -12,13 +12,6 @@ const Filter = () => {
         producto.nombre.toLowerCase().includes(busquedaFiltro.toLowerCase())
       );
     }
-
-    //   if (filtroOrdCat) {
-    //     listaProductos = listaProductos.filter(
-    //       (producto) =>
-    //         producto.categoria.toLowerCase() === filtroOrdCat.toLowerCase()
-    //     );
-    //   }
   };
   return (
     <form className="d-flex">

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 
 const ItemCount = ({ stock, initial, onAdd }) => {
-  let buttonActive = true;
   const [item, setItem] = useState(0);
+  let [buttonActive, setButton] = useState(true);
 
   useEffect(() => {
     setItem(0);
@@ -12,13 +12,14 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     if (item < stock) {
       setItem(item + 1);
     } else {
-      buttonActive = false;
+      setButton(false);
     }
   };
 
   const decrement = () => {
-    if (item > initial && item <= stock) {
+    if (item > 0 && item <= stock) {
       setItem(item - 1);
+      setButton(true);
     }
   };
 
