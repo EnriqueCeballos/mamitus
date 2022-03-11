@@ -1,55 +1,55 @@
-// import {
-//   doc,
-//   collection,
-//   setDoc,
-//   updateDoc,
-//   increment,
-// } from "firebase/firestore";
+import {
+  doc,
+  collection,
+  setDoc,
+  updateDoc,
+  increment,
+} from "firebase/firestore";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
-// import db from "./utils/FirebaseConfig";
+import db from "./utils/FirebaseConfig";
 
 const Cart = () => {
   const prueba = useContext(CartContext);
-  // const createOrder = () => {
-  //   let order = {
-  //     buyer: {
-  //       email: "",
-  //       name: "",
-  //       phone: "123456568",
-  //     },
-  //     items: prueba.listaDelCarrito.map((item) => {
-  //       return {
-  //         id: item.idItem,
-  //         precio: item.precio,
-  //         nombre: item.nameItem,
-  //         QYT: item.qtyItem,
-  //       };
-  //     }),
-  //     total: prueba.calculoTotal(),
-  //   };
+  const createOrder = () => {
+    let order = {
+      buyer: {
+        email: "",
+        name: "",
+        phone: "123456568",
+      },
+      items: prueba.listaDelCarrito.map((item) => {
+        return {
+          id: item.idItem,
+          precio: item.precio,
+          nombre: item.nameItem,
+          QYT: item.qtyItem,
+        };
+      }),
+      total: prueba.calculoTotal(),
+    };
 
-  //   console.log(order);
-  //   const createOrderInFirestore = async () => {
-  //     const newOrderRef = doc(collection(db, "orders"));
-  //     await setDoc(newOrderRef, order);
-  //     return newOrderRef;
-  //   };
+    console.log(order);
+    const createOrderInFirestore = async () => {
+      const newOrderRef = doc(collection(db, "orders"));
+      await setDoc(newOrderRef, order);
+      return newOrderRef;
+    };
 
-  //   createOrderInFirestore()
-  //     .then((result) => {
-  //       alert(" Your order has been created" + result.id),
-  //         prueba.listaDelCarrito.map(async (item) => {
-  //           const itemRef = doc(db, "item", item.idItem);
-  //           await updateDoc(itemRef, {
-  //             stock: increment(-item.qtyItem),
-  //           });
-  //         });
-  //       prueba.removeList();
-  //     })
-  //     .catch((error) => console.log(error));
-  // };
+    createOrderInFirestore()
+      .then((result) => {
+        alert(" Your order has been created" + result.id),
+          prueba.listaDelCarrito.map(async (item) => {
+            const itemRef = doc(db, "item", item.idItem);
+            await updateDoc(itemRef, {
+              stock: increment(-item.qtyItem),
+            });
+          });
+        prueba.removeList();
+      })
+      .catch((error) => console.log(error));
+  };
 
   return (
     <>
