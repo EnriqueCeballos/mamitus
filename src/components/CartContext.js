@@ -1,9 +1,20 @@
 import { createContext, useState } from "react";
+import db from "./utils/FirebaseConfig";
+import { getDocs, collection } from "firebase/firestore";
 
 export const CartContext = createContext();
 
 const CartContextProvider = ({ children }) => {
   const [listaDelCarrito, setlistaDelCarrito] = useState([]);
+
+  const getProductsFirebase = async () => {
+    const querySnapshot = await getDocs(collection(db, "item"));
+    const dataFromFirestone = querySnapshot.docs.map((document) => ({
+      id: document.id,
+      ...document.data(),
+    }));
+    return dataFromFirestone;
+  };
 
   const addToCart = (item, qty) => {
     let busqueda = listaDelCarrito.find(
@@ -65,6 +76,7 @@ const CartContextProvider = ({ children }) => {
         calculoSubTotal,
         calculoTotal,
         calculoItemsQty,
+        getProductsFirebase,
       }}
     >
       {children}

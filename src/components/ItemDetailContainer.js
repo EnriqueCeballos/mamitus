@@ -1,12 +1,27 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import db from "./utils/FirebaseConfig";
-import { doc, getDoc } from "firebase/firestore";
 import { useParams } from "react-router-dom";
+import { doc, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const [dato, setDatos] = useState({});
   const { idItem } = useParams();
+
+  // useEffect(() => {
+  //   const collection = db.collection("item");
+
+  //   collection
+  //     .get()
+  //     .then((resultado) => {
+  //       const data = resultado.docs.map((doc) => ({
+  //         id: doc.id,
+  //         ...doc.data(),
+  //       }));
+  //       setDatos(data.find((res) => res.id == id));
+  //     })
+  //     .catch((err) => console.log(err));
+  // }, [id]);
 
   useEffect(() => {
     const firestoreFetchOne = async () => {

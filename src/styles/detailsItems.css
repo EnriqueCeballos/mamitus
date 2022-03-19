@@ -1,20 +1,18 @@
 .detailsItemsCard {
   display: flex;
   flex-direction: row;
+  height: 600px;
 }
 
-.imagenDetails img {
-  height: 800px;
-}
 .textDetails p {
   font-size: 30px;
 }
 .cardImgDetails {
-  width: 200px;
+  width: 300px;
+  height: 300px;
+  margin-right: 20px;
 }
 
-.detailsProduct {
-}
 .nameProductDetails {
   align-items: center;
   justify-content: center;
@@ -43,4 +41,5 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
+  border: 1px solid black;
 }

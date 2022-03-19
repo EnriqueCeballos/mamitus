@@ -6,7 +6,7 @@ import {
   where,
 } from "firebase/firestore";
 
-export const firestoreFetch = async (idCategory) => {
+export const firestoreFetchCategory = async (idCategory) => {
   let q;
   if (idCategory) {
     q = query(collection(db, "item"), where("categoria", "==", idCategory));

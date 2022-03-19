@@ -39,13 +39,13 @@ const Cart = () => {
 
     createOrderInFirestore()
       .then((result) => {
-        alert(" Your order has been created" + result.id),
-          prueba.listaDelCarrito.map(async (item) => {
-            const itemRef = doc(db, "item", item.idItem);
-            await updateDoc(itemRef, {
-              stock: increment(-item.qtyItem),
-            });
+        alert(" Your order has been created" + result.id);
+        prueba.listaDelCarrito.map(async (item) => {
+          const itemRef = doc(db, "item", item.idItem);
+          await updateDoc(itemRef, {
+            stock: increment(-item.qtyItem),
           });
+        });
         prueba.removeList();
       })
       .catch((error) => console.log(error));
@@ -58,14 +58,14 @@ const Cart = () => {
           <button>Continuar comprando</button>
         </Link>
 
-        <h1>CARRITO DE COMPRAS</h1>
+        <h1 className="tittleCartPage">CARRITO DE COMPRAS</h1>
 
         {prueba.listaDelCarrito.length > 0 ? (
           <button onClick={() => prueba.removeList()}>
             Borrar todos los productos
           </button>
         ) : (
-          <h2>Tu carrito esta vacio</h2>
+          <h2 className="emptyCartText">Tu carrito esta vacio</h2>
         )}
 
         <div className="cardDetailInfo">
@@ -102,7 +102,7 @@ const Cart = () => {
                 <p>SubTotal: {prueba.calculoSubTotal()}</p>
                 <p>Total: {prueba.calculoTotal()}</p>
 
-                <button /*onClick={createOrder}*/>Finalizar Compra</button>
+                <button onClick={createOrder}>Finalizar Compra</button>
               </div>
             </>
           )}

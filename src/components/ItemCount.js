@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import AddCircleIcon from "@material-ui/icons/AddCircle";
+import RemoveCircleIcon from "@material-ui/icons/RemoveCircle";
 
 const ItemCount = ({ stock, initial, onAdd }) => {
   const [item, setItem] = useState(0);
@@ -9,7 +11,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   }, []);
 
   const increment = () => {
-    if (item < stock) {
+    if (item <= stock) {
       setItem(item + 1);
     } else {
       setButton(false);
@@ -26,21 +28,19 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   return (
     <>
       <div className="itemsCountButtoms">
-        <img
-          src="../img/icon/minus.png"
+        <RemoveCircleIcon
           onClick={decrement}
           className="minusButton"
           alt="Boton -"
-        ></img>
+        ></RemoveCircleIcon>
 
         <p className="itemCountP">{item}</p>
-        <img
-          src="../img/icon/plus.png"
+        <AddCircleIcon
           onClick={increment}
           className="plusButton"
           disabled={!buttonActive}
           alt="Boton +"
-        ></img>
+        ></AddCircleIcon>
         <div className="addBuy" onClick={() => onAdd(item)}>
           <button className="addCart">Agregar al carrito</button>
         </div>

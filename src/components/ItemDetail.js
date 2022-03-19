@@ -18,7 +18,7 @@ function ItemDetail({ item }) {
       <div className="detailsItemsCard">
         <div className="imagenDetails">
           <img
-            src={"." + item.img}
+            src={item.img}
             alt="Imagenes varias"
             className="cardImgDetails"
           />

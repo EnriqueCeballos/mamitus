@@ -70,9 +70,9 @@
   background-color: #9fe3c2;
   border-radius: 8px;
 }
-
+/* #da7d38 */
 .bodyGallery {
-  background-color: #da7d38;
+  background-color: #d98236;
   width: 100%;
   margin-bottom: 10px;
 }
@@ -216,7 +216,8 @@
 }
 
 .cartPage {
-  height: 500px;
+  height: 650px;
+  display: table-footer-group;
 }
 .cartPage p {
   font-size: 40px;
