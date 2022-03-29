@@ -5,14 +5,14 @@ import "./styles/footer.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ItemListContainer from "./components/ItemListContainer";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { Route, Routes, HashRouter } from "react-router-dom";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Cart from "./components/Cart";
 import CartContextProvider from "./components/CartContext";
 function App() {
   return (
     <CartContextProvider>
-      <BrowserRouter>
+      <HashRouter>
         <Navbar />
         <Routes>
           <Route path="/" element={<ItemListContainer />}></Route>
@@ -25,7 +25,7 @@ function App() {
         </Routes>
 
         <Footer />
-      </BrowserRouter>
+      </HashRouter>
     </CartContextProvider>
   );
 }
