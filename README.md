@@ -36,4 +36,4 @@ CREACION DE LA PAGINA A NIVEL PROGRAMACION
 
 #VISTA DE LA PAGINA
 
-![Mamitus.mp4](https://github.com/EnriqueCeballos/mamitus/blob/master/public/img/Mamitus.mp4)
+![Mamitus.gif](https://github.com/EnriqueCeballos/mamitus/blob/master/public/img/Mamitus.gif)
