@@ -32,10 +32,8 @@ CREACION DE LA PAGINA A NIVEL PROGRAMACION
 4- CartContext: atravez de este archivo se genera una conexion con todos los archivos de la aplicacion para poder conectar dos elementos de diferentes ramas y que funcione en armonia como lo es (ItemCount/CartWidget con el NavBar).
 
 5 - Item: accede a todos los valores individuales del array establecida en la Firebase.
-<<<<<<< HEAD
-=======
 
 
 #VISTA DE LA PAGINA
 
->>>>>>> becb61bf3402e128105e960082be57afcd5e3c50
+![Mamitus.mp4](https://github.com/EnriqueCeballos/mamitus/blob/master/public/img/Mamitus.mp4)
