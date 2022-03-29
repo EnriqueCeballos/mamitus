@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/mamitus/static/css/main.b777f03b.css",
-    "main.js": "/mamitus/static/js/main.c6ed0fa1.js",
+    "main.js": "/mamitus/static/js/main.e0a21b04.js",
     "index.html": "/mamitus/index.html",
     "main.b777f03b.css.map": "/mamitus/static/css/main.b777f03b.css.map",
-    "main.c6ed0fa1.js.map": "/mamitus/static/js/main.c6ed0fa1.js.map"
+    "main.e0a21b04.js.map": "/mamitus/static/js/main.e0a21b04.js.map"
   },
   "entrypoints": [
     "static/css/main.b777f03b.css",
-    "static/js/main.c6ed0fa1.js"
+    "static/js/main.e0a21b04.js"
   ]
 }
