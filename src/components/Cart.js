@@ -133,14 +133,14 @@ const Cart = () => {
       <Modal active={active} toggle={toggle}>
         <h3>Orden de compra</h3>
         <p>
-          Tu ID de compra es: <strong>{orderValue.id}</strong>
+          Tu ID de compra es: <strong>{orderValue?.id}</strong>
         </p>
         <p>
-          Nombre del comprador: <strong>{orderValue.buyer.name}</strong>
+          Nombre del comprador: <strong>{orderValue?.buyer?.name}</strong>
         </p>
         <p>
           Hemos enviado el comprobante de compra al email:
-          <strong> {orderValue.buyer.email}</strong>
+          <strong> {orderValue?.buyer?.email}</strong>
         </p>
       </Modal>
     </>
