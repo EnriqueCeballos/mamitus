@@ -1,3 +1,4 @@
+import Modal from "./Modal";
 import {
   doc,
   collection,
@@ -11,12 +12,19 @@ import { CartContext } from "./CartContext";
 import db from "./utils/FirebaseConfig";
 
 const Cart = () => {
+  const [active, setActive] = useState(false);
+  const toggle = () => {
+    setActive(!active);
+  };
+
+  const [orderValue, setOrderValue] = useState({});
+
   const prueba = useContext(CartContext);
   const createOrder = () => {
     let order = {
       buyer: {
-        email: "",
-        name: "",
+        email: "juanperez_cb@gmail.com",
+        name: "Juancito Perez",
         phone: "123456568",
       },
       items: prueba.listaDelCarrito.map((item) => {
@@ -30,7 +38,6 @@ const Cart = () => {
       total: prueba.calculoTotal(),
     };
 
-    console.log(order);
     const createOrderInFirestore = async () => {
       const newOrderRef = doc(collection(db, "orders"));
       await setDoc(newOrderRef, order);
@@ -39,7 +46,9 @@ const Cart = () => {
 
     createOrderInFirestore()
       .then((result) => {
-        alert(" Your order has been created" + result.id);
+        setOrderValue({ ...order, id: result.id });
+        setActive(true);
+
         prueba.listaDelCarrito.map(async (item) => {
           const itemRef = doc(db, "item", item.idItem);
           await updateDoc(itemRef, {
@@ -53,25 +62,43 @@ const Cart = () => {
 
   return (
     <>
-      <div className="cartPage">
-        <Link to={"/"}>
-          <button>Continuar comprando</button>
-        </Link>
+      <Link to={"/"}>
+        <button className="buttonContinueShopping">
+          ← Continuar comprando
+        </button>
+      </Link>
 
-        <h1 className="tittleCartPage">CARRITO DE COMPRAS</h1>
+      <h1 className="tittleCartPage">CARRITO DE COMPRAS</h1>
+      {prueba.listaDelCarrito.length > 0 ? (
+        <button
+          className="buttonClearItems"
+          onClick={() => prueba.removeList()}
+        >
+          Eliminar todos los productos
+        </button>
+      ) : (
+        <div className="emptyCart">
+          <h2 className="emptyCartText"> 🛒 Tu carrito esta vacio</h2>
+          <Link to={"/"}>
+            <button className="buttonContinueShopping">Volver al inicio</button>
+          </Link>
+        </div>
+      )}
 
-        {prueba.listaDelCarrito.length > 0 ? (
-          <button onClick={() => prueba.removeList()}>
-            Borrar todos los productos
-          </button>
-        ) : (
-          <h2 className="emptyCartText">Tu carrito esta vacio</h2>
-        )}
+      {prueba.listaDelCarrito.length > 0 && (
+        <>
+          <div className="cartPage">
+            <div className="totalPrice">
+              <h3>Orden de compra</h3>
+              <p>Total: ${prueba.calculoTotal()}</p>
+              <p>SubTotal: ${prueba.calculoSubTotal()}</p>
 
-        <div className="cardDetailInfo">
-          {prueba.listaDelCarrito.length > 0 && (
-            <>
-              {prueba.listaDelCarrito.map((item) => (
+              <button className="buttonEndShopping" onClick={createOrder}>
+                Finalizar Compra
+              </button>
+            </div>
+            {prueba.listaDelCarrito.map((item) => (
+              <div className="cardDetailInfo">
                 <div className="detailProduct">
                   <p key={item.idItem}></p>
                   <img
@@ -81,33 +108,41 @@ const Cart = () => {
                   />
                   <div className="otherInfo">
                     <span>
-                      <b> Producto:</b> {item.nameItem}
+                      <p> Producto: {item.nameItem}</p>
                     </span>
-                    <button
-                      className="eliminarItem"
-                      onClick={() => prueba.deleteItem(item.idItem)}
-                    >
-                      Borrar producto
-                    </button>
+
                     <div className="priceDetail">
-                      <p>{item.qtyItem} item(s)</p>
-                      <p>${item.precio} pesos</p>
-                      <p>${prueba.calculoTotalPorItem(item.idItem)}</p>
+                      <p>Cantidad: {item.qtyItem} item(s)</p>
+                      <p>Precio Unitario: ${item.precio} pesos</p>
+
+                      <button
+                        className="eliminarItem"
+                        onClick={() => prueba.deleteItem(item.idItem)}
+                      >
+                        Borrar producto
+                      </button>
                     </div>
                   </div>
                 </div>
-              ))}
-              <div className="totalPrice">
-                <p>Orden de compra</p>
-                <p>SubTotal: {prueba.calculoSubTotal()}</p>
-                <p>Total: {prueba.calculoTotal()}</p>
-
-                <button onClick={createOrder}>Finalizar Compra</button>
               </div>
-            </>
-          )}
-        </div>
-      </div>
+            ))}
+          </div>
+        </>
+      )}
+
+      <Modal active={active} toggle={toggle}>
+        <h3>Orden de compra</h3>
+        <p>
+          Tu ID de compra es: <strong>{orderValue.id}</strong>
+        </p>
+        <p>
+          Nombre del comprador: <strong>{orderValue.buyer.name}</strong>
+        </p>
+        <p>
+          Hemos enviado el comprobante de compra al email:
+          <strong> {orderValue.buyer.email}</strong>
+        </p>
+      </Modal>
     </>
   );
 };

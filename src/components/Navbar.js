@@ -1,7 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import CartWidget from "./CartWidget.js";
 import { Link } from "react-router-dom";
-import Filter from "./Filter";
 
 const Navbar = () => {
   return (
@@ -34,24 +33,6 @@ const Navbar = () => {
                 Ferias
               </Link>
             </li>
-            <li>
-              <Link to={"/categoria/redondas"} className="nav-link ">
-                Alfombras Redondas
-              </Link>
-            </li>
-            <li>
-              <Link to={"/categoria/cuadradas"} className="nav-link ">
-                Alfombras Cuadradas
-              </Link>
-            </li>
-            <li>
-              <hr className="dropdown-divider" />
-            </li>
-            <li>
-              <Link to={"/categoria/basicas"} className="nav-link ">
-                Alfombras Basicas
-              </Link>
-            </li>
 
             <li className="nav-item">
               <Link to="/nosotros" className="nav-link ">
@@ -59,7 +40,6 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
-          <Filter />
 
           <CartWidget />
         </div>

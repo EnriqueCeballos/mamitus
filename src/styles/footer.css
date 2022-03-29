@@ -1,13 +1,18 @@
 /* FOOTER */
 footer {
-  background-color: #f25c5c;
-  width: 100%;
+  background-color: var(--footer);
   height: 300px;
   display: flex;
   justify-content: space-evenly;
   font-size: 20px;
 }
 
+.emptyCart {
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .plusButton,
 .minusButton {
   height: 30px;
@@ -15,7 +20,8 @@ footer {
   width: 30px;
 }
 
-.footerRedes {
+.footerRedes,
+.footerLogo {
   color: black;
   display: flex;
   flex-direction: column;
@@ -33,7 +39,10 @@ footer {
   width: 30px;
   height: 30px;
 }
-
+.footerLogo {
+  font-size: 40px;
+  color: var(--textAlternative);
+}
 .footerContact {
   display: flex;
   flex-direction: column;

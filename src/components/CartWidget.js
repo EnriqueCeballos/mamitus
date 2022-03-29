@@ -1,5 +1,6 @@
 import React from "react";
 import LocalMallIcon from "@material-ui/icons/LocalMall";
+import Badge from "@material-ui/core/Badge";
 import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
 import { useContext } from "react";
@@ -10,10 +11,8 @@ const CartWidget = () => {
   return (
     <Link to="/cart">
       <div className="buy">
-        <LocalMallIcon
-          bagdeContent={prueba.calculoItemsQty()}
-          color="secondary"
-        ></LocalMallIcon>
+        <Badge badgeContent={prueba.calculoItemsQty()} color="secondary" />
+        <LocalMallIcon></LocalMallIcon>
       </div>
     </Link>
   );

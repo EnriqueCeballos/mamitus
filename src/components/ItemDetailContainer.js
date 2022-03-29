@@ -8,21 +8,6 @@ const ItemDetailContainer = () => {
   const [dato, setDatos] = useState({});
   const { idItem } = useParams();
 
-  // useEffect(() => {
-  //   const collection = db.collection("item");
-
-  //   collection
-  //     .get()
-  //     .then((resultado) => {
-  //       const data = resultado.docs.map((doc) => ({
-  //         id: doc.id,
-  //         ...doc.data(),
-  //       }));
-  //       setDatos(data.find((res) => res.id == id));
-  //     })
-  //     .catch((err) => console.log(err));
-  // }, [id]);
-
   useEffect(() => {
     const firestoreFetchOne = async () => {
       const docRef = doc(db, "item", idItem);

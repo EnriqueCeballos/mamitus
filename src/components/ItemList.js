@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ItemList = ({ items }) => {
   return (
-    <div className="galleryProduct">
+    <section className="galleryProduct">
       {items.length > 0 ? (
         items.map((item) => <Item item={item} key={item.id}></Item>)
       ) : (
@@ -20,7 +20,7 @@ const ItemList = ({ items }) => {
           </div>
         </div>
       )}
-    </div>
+    </section>
   );
 };
 export default ItemList;

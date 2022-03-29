@@ -23,6 +23,7 @@ function App() {
           ></Route>
           <Route path="/cart" element={<Cart />}></Route>
         </Routes>
+
         <Footer />
       </BrowserRouter>
     </CartContextProvider>

@@ -11,7 +11,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   }, []);
 
   const increment = () => {
-    if (item <= stock) {
+    if (item < stock) {
       setItem(item + 1);
     } else {
       setButton(false);
@@ -19,7 +19,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   };
 
   const decrement = () => {
-    if (item > 0 && item <= stock) {
+    if (item > initial && item <= stock) {
       setItem(item - 1);
       setButton(true);
     }
@@ -41,9 +41,9 @@ const ItemCount = ({ stock, initial, onAdd }) => {
           disabled={!buttonActive}
           alt="Boton +"
         ></AddCircleIcon>
-        <div className="addBuy" onClick={() => onAdd(item)}>
-          <button className="addCart">Agregar al carrito</button>
-        </div>
+      </div>
+      <div className="addBuy" onClick={() => onAdd(item)}>
+        <button className="addCart">Agregar al carrito</button>
       </div>
     </>
   );

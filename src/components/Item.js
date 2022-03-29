@@ -23,19 +23,20 @@ function Item({ item }) {
   }, [datos]);
   return (
     <>
-      <div className="cardProduct">
+      <article className="cardProduct">
         <div className="imagen-producto">
           <img src={item.img} alt="Imagenes varias" className="card_img" />
           {/* <p className="detailsProduct">{item.descripcion}</p> */}
-          <p className="nameProduct">{item.nombre}</p>
-          <p className="priceProduct">Precio: ${item.precio}</p>
         </div>
-        <div className="buyNow">
-          <div className="textBuy">
-            <Link to={`/item/${item.id}`}>DETALLES</Link>
-          </div>
+        <div className="cardProduct-info">
+          <p>Precio: ${item.precio}</p>
+          <p>Stock: {item.stock}u.</p>
         </div>
-      </div>
+        <p className="nameProduct">{item.nombre}</p>
+        <Link to={`/item/${item.id}`} className="textBuy">
+          DETALLES
+        </Link>
+      </article>
     </>
   );
 }
